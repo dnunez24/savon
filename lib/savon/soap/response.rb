@@ -21,7 +21,7 @@ module Savon
 
       # Returns whether the request was successful.
       def success?
-        !soap_fault? && !http_error?
+        !(soap_fault? || http_error?)
       end
 
       # Returns whether there was a SOAP fault.
